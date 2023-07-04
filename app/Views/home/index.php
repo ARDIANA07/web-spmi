@@ -11,10 +11,13 @@
             </ol>
         </nav>
     </div>
-    <h2>Logo StartUp Ardi Sang Juara</h2>
+    <h2>Selamat Datang Di</h2>
+    <marquee behavior="scroll" direction="left" scrollamount="2">
+        <h5><b> APLIKASI PELAPORAN SISTEM PENJAMINAN MUTU INTERNAL</b></h5>
+    </marquee>
+
     <div class="content">
         <div class="flex-container">
-            <img src="../img/logo_ardi.png" alt="" width="300px">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias vel, amet similique culpa dignissimos,
                 aliquid itaque fugiat sint iure quo placeat! Recusandae nisi neque voluptatibus non aspernatur. Fuga,
                 optio

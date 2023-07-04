@@ -32,6 +32,7 @@ $routes->set404Override();
 
 //method get
 $routes->get('/', 'Pengguna::index');
+$routes->get('/home', 'Home::index');
 
 $routes->resource('pengguna');
 
