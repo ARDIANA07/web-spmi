@@ -1,0 +1,17 @@
+ERROR - 2023-07-04 05:46:18 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'NOT NULL,
+	`status` Enum NOT NULL,
+	`created_at` DATETIME NOT NULL,
+	`updated...' at line 3 in C:\xampp\htdocs\web_spmi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\web_spmi\system\Database\MySQLi\Connection.php(295): mysqli->query('CREATE TABLE `t...', 0)
+#1 C:\xampp\htdocs\web_spmi\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `t...')
+#2 C:\xampp\htdocs\web_spmi\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `t...')
+#3 C:\xampp\htdocs\web_spmi\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `t...')
+#4 C:\xampp\htdocs\web_spmi\app\Database\Migrations\2023-07-04-041512_Tahun.php(35): CodeIgniter\Database\Forge->createTable('tahun')
+#5 C:\xampp\htdocs\web_spmi\system\Database\MigrationRunner.php(877): App\Database\Migrations\Tahun->up()
+#6 C:\xampp\htdocs\web_spmi\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\web_spmi\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\web_spmi\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\web_spmi\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\web_spmi\spark(97): CodeIgniter\CLI\Console->run()
+#11 {main}
