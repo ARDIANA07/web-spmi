@@ -27,13 +27,16 @@ class Pengguna extends ResourceController
 
     public function new()
     {
-        //
+        return view('admin/pengguna/add');
     }
 
 
     public function create()
     {
-        //
+        $dataPengguna = $this->request->getPost();
+        $this->model->insert($dataPengguna);
+
+        return redirect()->to('/pengguna')->with('success', 'pengguna created successfully');
     }
 
 
@@ -56,6 +59,8 @@ class Pengguna extends ResourceController
 
     public function delete($id = null)
     {
-        //
+        $this->model->delete($id);
+
+        return redirect()->to('/pengguna');
     }
 }

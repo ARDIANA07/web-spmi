@@ -6,73 +6,61 @@ use CodeIgniter\RESTful\ResourceController;
 
 class Tahun extends ResourceController
 {
-    /**
-     * Return an array of resource objects, themselves in array format
-     *
-     * @return mixed
-     */
-    public function index()
+    public function __construct()
     {
-        //
+        $this->model = new \App\Models\Tahun();
     }
 
-    /**
-     * Return the properties of a resource object
-     *
-     * @return mixed
-     */
+    public function index()
+    {
+        $dataTahun = $this->model->findAll();
+
+        return view('admin/tahun/index', ['tahun' => $dataTahun]);
+    }
+
+
     public function show($id = null)
     {
         //
     }
 
-    /**
-     * Return a new resource object, with default properties
-     *
-     * @return mixed
-     */
+
     public function new()
     {
-        //
+        return view('admin/tahun/add');
     }
 
-    /**
-     * Create a new resource object, from "posted" parameters
-     *
-     * @return mixed
-     */
+
     public function create()
     {
-        //
+        $dataTahun = $this->request->getPost();
+        $this->model->insert($dataTahun);
+
+        return redirect()->to('/tahun')->with('success', 'tahun created successfully');
     }
 
-    /**
-     * Return the editable properties of a resource object
-     *
-     * @return mixed
-     */
+
     public function edit($id = null)
     {
-        //
+        $dataPengguna = $this->model->where('id_pengguna', $id)->first();
+
+        return view('admin/pengguna/edit', ['pengguna' => $dataPengguna]);
     }
 
-    /**
-     * Add or update a model resource, from "posted" properties
-     *
-     * @return mixed
-     */
+
     public function update($id = null)
     {
-        //
+        $dataPengguna = $this->request->getPost();
+        $this->model->where('id_pengguna', $id)->set($dataPengguna)->update();
+
+        return redirect()->to('/pengguna');
     }
 
-    /**
-     * Delete the designated resource object from the model
-     *
-     * @return mixed
-     */
+
     public function delete($id = null)
     {
-        //
+        $this->model->delete($id);
+
+        return redirect()->to('/pengguna');
     }
 }
