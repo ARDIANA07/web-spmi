@@ -39,13 +39,18 @@ class Pengguna extends ResourceController
 
     public function edit($id = null)
     {
-        //
+        $dataPengguna = $this->model->where('id_pengguna', $id)->first();
+
+        return view('admin/pengguna/edit', ['pengguna' => $dataPengguna]);
     }
 
 
     public function update($id = null)
     {
-        //
+        $dataPengguna = $this->request->getPost();
+        $this->model->where('id_pengguna', $id)->set($dataPengguna)->update();
+
+        return redirect()->to('/pengguna');
     }
 
 
