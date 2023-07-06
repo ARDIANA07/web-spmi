@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
+use CodeIgniter\Session\Session;
+
 
 class Tahun extends ResourceController
 {
@@ -35,6 +37,11 @@ class Tahun extends ResourceController
     {
         $dataTahun = $this->request->getPost();
         $this->model->insert($dataTahun);
+
+        //flash message
+        session()->setFlashdata('message', 'Post Berhasil Disimpan');
+
+
 
         return redirect()->to('/tahun')->with('success', 'tahun created successfully');
     }

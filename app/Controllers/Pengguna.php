@@ -36,7 +36,9 @@ class Pengguna extends ResourceController
         $dataPengguna = $this->request->getPost();
         $this->model->insert($dataPengguna);
 
-        return redirect()->to('/pengguna')->with('success', 'pengguna created successfully');
+        session()->setFlashdata('success', 'Data Berhasil ditambahkan');
+
+        return redirect()->to('/pengguna');
     }
 
 
@@ -53,6 +55,7 @@ class Pengguna extends ResourceController
         $dataPengguna = $this->request->getPost();
         $this->model->where('id_pengguna', $id)->set($dataPengguna)->update();
 
+        session()->setFlashdata('success', 'Data Berhasil di update');
         return redirect()->to('/pengguna');
     }
 
@@ -61,6 +64,7 @@ class Pengguna extends ResourceController
     {
         $this->model->delete($id);
 
+        session()->setFlashdata('success', 'Data Berhasil dihapus');
         return redirect()->to('/pengguna');
     }
 }
