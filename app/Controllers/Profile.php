@@ -6,71 +6,54 @@ use CodeIgniter\RESTful\ResourceController;
 
 class Profile extends ResourceController
 {
-    /**
-     * Return an array of resource objects, themselves in array format
-     *
-     * @return mixed
-     */
-    public function index()
+
+    public function __construct()
     {
-        //
+        $this->model = new \App\Models\Profile();
     }
 
-    /**
-     * Return the properties of a resource object
-     *
-     * @return mixed
-     */
+    public function index()
+    {
+        $dataProfile = $this->model->findAll();
+
+        return view('admin/profile/index', ['profile' => $dataProfile]);
+    }
+
     public function show($id = null)
     {
         //
     }
 
-    /**
-     * Return a new resource object, with default properties
-     *
-     * @return mixed
-     */
+
     public function new()
     {
-        //
+        return view('admin/profile/add');
     }
 
-    /**
-     * Create a new resource object, from "posted" parameters
-     *
-     * @return mixed
-     */
+
     public function create()
     {
-        //
+        $dataProfile = $this->request->getPost();
+        $this->model->insert($dataProfile);
+
+        session()->setFlashdata('success', 'Data Berhasil ditambahkan');
+
+        return redirect()->to('/profile')->with('success', 'Profile created successfully');
     }
 
-    /**
-     * Return the editable properties of a resource object
-     *
-     * @return mixed
-     */
+
+
     public function edit($id = null)
     {
         //
     }
 
-    /**
-     * Add or update a model resource, from "posted" properties
-     *
-     * @return mixed
-     */
+
     public function update($id = null)
     {
         //
     }
 
-    /**
-     * Delete the designated resource object from the model
-     *
-     * @return mixed
-     */
     public function delete($id = null)
     {
         //

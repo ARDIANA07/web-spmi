@@ -4,6 +4,7 @@
 
 <link rel="stylesheet" href="../css/style.css">
 
+
 <div class="row mt-3 align-items-center">
     <div class="col-md-10">
         <nav aria-label="breadcrumb" class="bg-light p-3">
@@ -20,9 +21,9 @@
 <a href="/pengguna/new" class="btn btn-outline-primary">Tambah Pengguna</a>
 <br>
 <?php if (session()->getFlashdata('success')) : ?>
-<div class="alert alert-success">
-    <?php echo session()->getFlashdata('success'); ?>
-</div>
+    <div class="alert alert-success">
+        <?php echo session()->getFlashdata('success'); ?>
+    </div>
 <?php endif; ?>
 
 
@@ -40,26 +41,24 @@
             <tbody>
                 <?php $i = 1; ?>
                 <?php foreach ($pengguna as $p) : ?>
-                <tr>
-                    <td><?= $i++; ?></td>
-                    <td><?= $p['name']; ?></td>
-                    <td><?= $p['jabatan']; ?></td>
-                    <td>
-                        <div class="row">
-                            <div class="col-auto">
-                                <a href="/pengguna/<?= $p['id_pengguna']; ?>/edit"
-                                    class="btn btn-outline-warning mr-2">Edit</a>
+                    <tr>
+                        <td><?= $i++; ?></td>
+                        <td><?= $p['name']; ?></td>
+                        <td><?= $p['jabatan']; ?></td>
+                        <td>
+                            <div class="row">
+                                <div class="col-auto">
+                                    <a href="/pengguna/<?= $p['id_pengguna']; ?>/edit" class="btn btn-outline-warning mr-2">Edit</a>
+                                </div>
+                                <div class="col-auto px-0">
+                                    <form action="/pengguna/<?= $p['id_pengguna']; ?>" method="POST">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-outline-danger" onclick="confirm('Apakah kamu yakin akan menghapus data ini ?')">Delete</button>
+                                    </form>
+                                </div>
                             </div>
-                            <div class="col-auto px-0">
-                                <form action="/pengguna/<?= $p['id_pengguna']; ?>" method="POST">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <button type="submit" class="btn btn-outline-danger"
-                                        onclick="confirm('Apakah kamu yakin akan menghapus data ini ?')">Delete</button>
-                                </form>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
+                        </td>
+                    </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>

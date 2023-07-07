@@ -1,0 +1,344 @@
+ERROR - 2023-07-07 14:39:04 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\web_spmi\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\xampp\htdocs\web_spmi\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'db_spmi', 3306, '', 0)
+#1 C:\xampp\htdocs\web_spmi\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\web_spmi\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\web_spmi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\web_spmi\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\web_spmi\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\web_spmi\app\Controllers\Pengguna.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\web_spmi\system\CodeIgniter.php(934): App\Controllers\Pengguna->index()
+#8 C:\xampp\htdocs\web_spmi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengguna))
+#9 C:\xampp\htdocs\web_spmi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\web_spmi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\web_spmi\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\web_spmi\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp\htdocs\web_spmi\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\web_spmi\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\web_spmi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\web_spmi\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\web_spmi\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\web_spmi\app\Controllers\Pengguna.php(16): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\web_spmi\system\CodeIgniter.php(934): App\Controllers\Pengguna->index()
+#7 C:\xampp\htdocs\web_spmi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengguna))
+#8 C:\xampp\htdocs\web_spmi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\web_spmi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\web_spmi\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2023-07-07 14:39:04 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pengguna`
+WHERE `pengguna`.`deleted_at` IS NULL', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Pengguna.php(16): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Pengguna->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengguna))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')
+INFO - 2023-07-07 14:39:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-07 14:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-07 14:59:25 --> mysqli_sql_exception: Table 'db_spmi.profiles' doesn't exist in C:\xampp\htdocs\web_spmi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\web_spmi\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\web_spmi\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\web_spmi\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\web_spmi\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\web_spmi\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\web_spmi\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\web_spmi\app\Controllers\Profile.php(17): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\web_spmi\system\CodeIgniter.php(934): App\Controllers\Profile->index()
+#8 C:\xampp\htdocs\web_spmi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+#9 C:\xampp\htdocs\web_spmi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\web_spmi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\web_spmi\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2023-07-07 14:59:25 --> Table 'db_spmi.profiles' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `profiles`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `profiles`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `profiles`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `profiles`', [], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Profile.php(17): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Profile->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')
+CRITICAL - 2023-07-07 15:15:21 --> Undefined variable $profile
+in APPPATH\Views\admin\profile\index.php on line 21.
+ 1 APPPATH\Views\admin\profile\index.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $profile', 'C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\profile\\index.php', 21)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\profile\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/profile/index', [], true)
+ 5 APPPATH\Controllers\Profile.php(19): view('admin/profile/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Profile->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')
+CRITICAL - 2023-07-07 15:23:37 --> Trying to access array offset on value of type null
+in APPPATH\Views\admin\profile\index.php on line 21.
+ 1 APPPATH\Views\admin\profile\index.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\profile\\index.php', 21)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\profile\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/profile/index', [], true)
+ 5 APPPATH\Controllers\Profile.php(19): view('admin/profile/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Profile->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')
+CRITICAL - 2023-07-07 15:44:36 --> Undefined array key "prodi"
+in APPPATH\Views\admin\profile\index.php on line 22.
+ 1 APPPATH\Views\admin\profile\index.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "prodi"', 'C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\profile\\index.php', 22)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\profile\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/profile/index', [], true)
+ 5 APPPATH\Controllers\Profile.php(19): view('admin/profile/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Profile->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')
+CRITICAL - 2023-07-07 15:47:14 --> Attempt to read property "prodi" on array
+in APPPATH\Views\admin\profile\index.php on line 22.
+ 1 APPPATH\Views\admin\profile\index.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "prodi" on array', 'C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\profile\\index.php', 22)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\profile\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/profile/index', [], true)
+ 5 APPPATH\Controllers\Profile.php(19): view('admin/profile/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Profile->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')
+CRITICAL - 2023-07-07 15:48:12 --> Call to a member function rowArray() on array
+in APPPATH\Controllers\Profile.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Profile->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')
+CRITICAL - 2023-07-07 15:50:31 --> Attempt to read property "prodi" on array
+in APPPATH\Views\admin\profile\index.php on line 22.
+ 1 APPPATH\Views\admin\profile\index.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "prodi" on array', 'C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\profile\\index.php', 22)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\profile\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/profile/index', [], true)
+ 5 APPPATH\Controllers\Profile.php(19): view('admin/profile/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Profile->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')
+ERROR - 2023-07-07 16:08:08 --> mysqli_sql_exception: Unknown column 'updated_at' in 'field list' in C:\xampp\htdocs\web_spmi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\web_spmi\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\xampp\htdocs\web_spmi\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\web_spmi\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\web_spmi\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\web_spmi\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\web_spmi\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\web_spmi\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\web_spmi\app\Controllers\Profile.php(37): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\web_spmi\system\CodeIgniter.php(934): App\Controllers\Profile->create()
+#9 C:\xampp\htdocs\web_spmi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+#10 C:\xampp\htdocs\web_spmi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\web_spmi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\web_spmi\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-07-07 16:08:08 --> Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `profile` (`prodi`, `visi`, `misi`, `created_at`, `updated_at`) VALUES (\'Sistem Informasi\', \'Pada tahun 2035, Program Studi Sistem Informasi UAA menjadi program studi yang unggul, mandiri di bidang Enterprise Digital mampu bersaing di pasar kerja ASEAN, berkontribusi terhadap pembangunan kesejahteraan bangsa dan peradaban dunia berlandaskan nilai-nilai keislaman dan kebangsaan Indonesia.\', \'Menyelenggarakan Tri Dharma Perguruan Tinggi pendidikan sarjana Sistem Informasi yang unggul, mandiri di bidang Enterpise Digital, mampu bersaing di pasar kerja ASEAN, berlandaskan nilai-nilai keislaman dan kebangsaan Indonesia, serta berkontribusi terhadap pembangunan kesejahteraan bangsa dan peradaban dunia.\', \'2023-07-07 16:08:08\', \'2023-07-07 16:08:08\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `profile` (`prodi`, `visi`, `misi`, `created_at`, `updated_at`) VALUES (\'Sistem Informasi\', \'Pada tahun 2035, Program Studi Sistem Informasi UAA menjadi program studi yang unggul, mandiri di bidang Enterprise Digital mampu bersaing di pasar kerja ASEAN, berkontribusi terhadap pembangunan kesejahteraan bangsa dan peradaban dunia berlandaskan nilai-nilai keislaman dan kebangsaan Indonesia.\', \'Menyelenggarakan Tri Dharma Perguruan Tinggi pendidikan sarjana Sistem Informasi yang unggul, mandiri di bidang Enterpise Digital, mampu bersaing di pasar kerja ASEAN, berlandaskan nilai-nilai keislaman dan kebangsaan Indonesia, serta berkontribusi terhadap pembangunan kesejahteraan bangsa dan peradaban dunia.\', \'2023-07-07 16:08:08\', \'2023-07-07 16:08:08\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `profile` (`prodi`, `visi`, `misi`, `created_at`, `updated_at`) VALUES (\'Sistem Informasi\', \'Pada tahun 2035, Program Studi Sistem Informasi UAA menjadi program studi yang unggul, mandiri di bidang Enterprise Digital mampu bersaing di pasar kerja ASEAN, berkontribusi terhadap pembangunan kesejahteraan bangsa dan peradaban dunia berlandaskan nilai-nilai keislaman dan kebangsaan Indonesia.\', \'Menyelenggarakan Tri Dharma Perguruan Tinggi pendidikan sarjana Sistem Informasi yang unggul, mandiri di bidang Enterpise Digital, mampu bersaing di pasar kerja ASEAN, berlandaskan nilai-nilai keislaman dan kebangsaan Indonesia, serta berkontribusi terhadap pembangunan kesejahteraan bangsa dan peradaban dunia.\', \'2023-07-07 16:08:08\', \'2023-07-07 16:08:08\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `profile` (`prodi`, `visi`, `misi`, `created_at`, `updated_at`) VALUES (:prodi:, :visi:, :misi:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Profile.php(37): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Profile->create()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')
+ERROR - 2023-07-07 16:08:37 --> mysqli_sql_exception: Unknown column 'updated_at' in 'field list' in C:\xampp\htdocs\web_spmi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\web_spmi\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\xampp\htdocs\web_spmi\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\web_spmi\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\web_spmi\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\web_spmi\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\web_spmi\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\web_spmi\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\web_spmi\app\Controllers\Profile.php(37): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\web_spmi\system\CodeIgniter.php(934): App\Controllers\Profile->create()
+#9 C:\xampp\htdocs\web_spmi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+#10 C:\xampp\htdocs\web_spmi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\web_spmi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\web_spmi\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-07-07 16:08:37 --> Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `profile` (`prodi`, `visi`, `misi`, `created_at`, `updated_at`) VALUES (\'Sistem Informasi\', \'Pada tahun 2035, Program Studi Sistem Informasi UAA menjadi program studi yang unggul, mandiri di bidang Enterprise Digital mampu bersaing di pasar kerja ASEAN, berkontribusi terhadap pembangunan kesejahteraan bangsa dan peradaban dunia berlandaskan nilai-nilai keislaman dan kebangsaan Indonesia.\', \'Menyelenggarakan Tri Dharma Perguruan Tinggi pendidikan sarjana Sistem Informasi yang unggul, mandiri di bidang Enterpise Digital, mampu bersaing di pasar kerja ASEAN, berlandaskan nilai-nilai keislaman dan kebangsaan Indonesia, serta berkontribusi terhadap pembangunan kesejahteraan bangsa dan peradaban dunia.\', \'2023-07-07 16:08:37\', \'2023-07-07 16:08:37\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `profile` (`prodi`, `visi`, `misi`, `created_at`, `updated_at`) VALUES (\'Sistem Informasi\', \'Pada tahun 2035, Program Studi Sistem Informasi UAA menjadi program studi yang unggul, mandiri di bidang Enterprise Digital mampu bersaing di pasar kerja ASEAN, berkontribusi terhadap pembangunan kesejahteraan bangsa dan peradaban dunia berlandaskan nilai-nilai keislaman dan kebangsaan Indonesia.\', \'Menyelenggarakan Tri Dharma Perguruan Tinggi pendidikan sarjana Sistem Informasi yang unggul, mandiri di bidang Enterpise Digital, mampu bersaing di pasar kerja ASEAN, berlandaskan nilai-nilai keislaman dan kebangsaan Indonesia, serta berkontribusi terhadap pembangunan kesejahteraan bangsa dan peradaban dunia.\', \'2023-07-07 16:08:37\', \'2023-07-07 16:08:37\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `profile` (`prodi`, `visi`, `misi`, `created_at`, `updated_at`) VALUES (\'Sistem Informasi\', \'Pada tahun 2035, Program Studi Sistem Informasi UAA menjadi program studi yang unggul, mandiri di bidang Enterprise Digital mampu bersaing di pasar kerja ASEAN, berkontribusi terhadap pembangunan kesejahteraan bangsa dan peradaban dunia berlandaskan nilai-nilai keislaman dan kebangsaan Indonesia.\', \'Menyelenggarakan Tri Dharma Perguruan Tinggi pendidikan sarjana Sistem Informasi yang unggul, mandiri di bidang Enterpise Digital, mampu bersaing di pasar kerja ASEAN, berlandaskan nilai-nilai keislaman dan kebangsaan Indonesia, serta berkontribusi terhadap pembangunan kesejahteraan bangsa dan peradaban dunia.\', \'2023-07-07 16:08:37\', \'2023-07-07 16:08:37\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `profile` (`prodi`, `visi`, `misi`, `created_at`, `updated_at`) VALUES (:prodi:, :visi:, :misi:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Profile.php(37): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Profile->create()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')
+ERROR - 2023-07-07 16:08:58 --> mysqli_sql_exception: Unknown column 'updated_at' in 'field list' in C:\xampp\htdocs\web_spmi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\web_spmi\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\xampp\htdocs\web_spmi\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\web_spmi\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\web_spmi\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\web_spmi\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\web_spmi\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\web_spmi\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\web_spmi\app\Controllers\Profile.php(37): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\web_spmi\system\CodeIgniter.php(934): App\Controllers\Profile->create()
+#9 C:\xampp\htdocs\web_spmi\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+#10 C:\xampp\htdocs\web_spmi\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\web_spmi\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\web_spmi\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-07-07 16:08:58 --> Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `profile` (`prodi`, `visi`, `misi`, `created_at`, `updated_at`) VALUES (\'uygbyu\', \'efvwef\', \'dvwde\', \'2023-07-07 16:08:58\', \'2023-07-07 16:08:58\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `profile` (`prodi`, `visi`, `misi`, `created_at`, `updated_at`) VALUES (\'uygbyu\', \'efvwef\', \'dvwde\', \'2023-07-07 16:08:58\', \'2023-07-07 16:08:58\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `profile` (`prodi`, `visi`, `misi`, `created_at`, `updated_at`) VALUES (\'uygbyu\', \'efvwef\', \'dvwde\', \'2023-07-07 16:08:58\', \'2023-07-07 16:08:58\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `profile` (`prodi`, `visi`, `misi`, `created_at`, `updated_at`) VALUES (:prodi:, :visi:, :misi:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Profile.php(37): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Profile->create()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')
+INFO - 2023-07-07 16:11:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-07 16:11:07 --> Undefined variable $th
+in APPPATH\Views\admin\profile\index.php on line 22.
+ 1 APPPATH\Views\admin\profile\index.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $th', 'C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\profile\\index.php', 22)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\profile\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/profile/index', [], true)
+ 5 APPPATH\Controllers\Profile.php(19): view('admin/profile/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Profile->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profile))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')
+INFO - 2023-07-07 16:13:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-07 16:14:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-07 16:15:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-07 16:15:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-07 16:15:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-07 16:16:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-07 16:19:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-07 16:50:40 --> Undefined array key "ppepp"
+in APPPATH\Views\admin\ppepp\index.php on line 29.
+ 1 APPPATH\Views\admin\ppepp\index.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ppepp"', 'C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\ppepp\\index.php', 29)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\ppepp\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/ppepp/index', [], true)
+ 5 APPPATH\Controllers\PPEPP.php(18): view('admin/ppepp/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PPEPP->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PPEPP))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')
+CRITICAL - 2023-07-07 16:52:17 --> Undefined array key "ppepp"
+in APPPATH\Views\admin\ppepp\index.php on line 29.
+ 1 APPPATH\Views\admin\ppepp\index.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ppepp"', 'C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\ppepp\\index.php', 29)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\ppepp\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/ppepp/index', [], true)
+ 5 APPPATH\Controllers\PPEPP.php(18): view('admin/ppepp/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PPEPP->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PPEPP))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')
+CRITICAL - 2023-07-07 16:54:44 --> Undefined array key "ppepp"
+in APPPATH\Views\admin\ppepp\index.php on line 29.
+ 1 APPPATH\Views\admin\ppepp\index.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ppepp"', 'C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\ppepp\\index.php', 29)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\ppepp\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/ppepp/index', [], true)
+ 5 APPPATH\Controllers\PPEPP.php(18): view('admin/ppepp/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PPEPP->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PPEPP))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')
+CRITICAL - 2023-07-07 16:56:51 --> Undefined array key "ppepp"
+in APPPATH\Views\admin\ppepp\index.php on line 29.
+ 1 APPPATH\Views\admin\ppepp\index.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ppepp"', 'C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\ppepp\\index.php', 29)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\ppepp\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/ppepp/index', [], true)
+ 5 APPPATH\Controllers\PPEPP.php(18): view('admin/ppepp/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PPEPP->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PPEPP))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')
+CRITICAL - 2023-07-07 16:57:46 --> Attempt to read property "ppepp" on array
+in APPPATH\Views\admin\ppepp\index.php on line 29.
+ 1 APPPATH\Views\admin\ppepp\index.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "ppepp" on array', 'C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\ppepp\\index.php', 29)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\ppepp\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/ppepp/index', [], true)
+ 5 APPPATH\Controllers\PPEPP.php(18): view('admin/ppepp/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PPEPP->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PPEPP))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')
+CRITICAL - 2023-07-07 17:02:14 --> Attempt to read property "ppepp" on array
+in APPPATH\Views\admin\ppepp\index.php on line 29.
+ 1 APPPATH\Views\admin\ppepp\index.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "ppepp" on array', 'C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\ppepp\\index.php', 29)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\ppepp\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/ppepp/index', [], true)
+ 5 APPPATH\Controllers\Ppepp.php(18): view('admin/ppepp/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ppepp->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ppepp))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')
+CRITICAL - 2023-07-07 17:03:25 --> Undefined array key "ppepp"
+in APPPATH\Views\admin\ppepp\index.php on line 29.
+ 1 APPPATH\Views\admin\ppepp\index.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ppepp"', 'C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\ppepp\\index.php', 29)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\web_spmi\\app\\Views\\admin\\ppepp\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/ppepp/index', [], true)
+ 5 APPPATH\Controllers\Ppepp.php(18): view('admin/ppepp/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ppepp->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ppepp))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\web_spmi\\public\\index.php')

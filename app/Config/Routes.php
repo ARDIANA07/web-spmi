@@ -34,9 +34,13 @@ $routes->set404Override();
 $routes->get('/', 'Pengguna::index');
 $routes->get('/home', 'Home::index');
 $routes->get('/tahun', 'Tahun::index');
+$routes->get('/profile', 'Profile::index');
+$routes->get('/Ppepp', 'PPEPP::index');
 
 $routes->resource('pengguna');
 $routes->resource('tahun');
+$routes->resource('profile');
+$routes->resource('Ppepp');
 
 
 

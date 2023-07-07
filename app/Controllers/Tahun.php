@@ -38,10 +38,7 @@ class Tahun extends ResourceController
         $dataTahun = $this->request->getPost();
         $this->model->insert($dataTahun);
 
-        //flash message
-        session()->setFlashdata('message', 'Post Berhasil Disimpan');
-
-
+        session()->setFlashdata('success', 'Data Berhasil ditambahkan');
 
         return redirect()->to('/tahun')->with('success', 'tahun created successfully');
     }
@@ -49,25 +46,18 @@ class Tahun extends ResourceController
 
     public function edit($id = null)
     {
-        $dataPengguna = $this->model->where('id_pengguna', $id)->first();
+        $datatahun = $this->model->where('id', $id)->first();
 
-        return view('admin/pengguna/edit', ['pengguna' => $dataPengguna]);
+        return view('admin/tahun/edit', ['tahun' => $datatahun]);
     }
 
 
     public function update($id = null)
     {
-        $dataPengguna = $this->request->getPost();
-        $this->model->where('id_pengguna', $id)->set($dataPengguna)->update();
+        $datatahun = $this->request->getPost();
+        $this->model->where('id', $id)->set($datatahun)->update();
 
-        return redirect()->to('/pengguna');
-    }
-
-
-    public function delete($id = null)
-    {
-        $this->model->delete($id);
-
-        return redirect()->to('/pengguna');
+        session()->setFlashdata('success', 'Data Berhasil diupdate');
+        return redirect()->to('/tahun');
     }
 }
