@@ -9,6 +9,6 @@ class PPEPP extends Model
     protected $table           = 'tb_ppepp';
     protected $primaryKey      = 'id';
     protected $useSoftDeletes  = true;
-    protected $allowedFields   = ['ppepp', 'kriteria', 'standar'];
+    protected $allowedFields   = ['jenis', 'kriteria', 'standar'];
     protected $useTimestamps   = true;
 }

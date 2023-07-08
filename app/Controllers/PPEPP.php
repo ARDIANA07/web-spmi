@@ -8,14 +8,14 @@ class Ppepp extends ResourceController
 {
     public function __construct()
     {
-        $this->model = new \App\Models\Profile();
+        $this->model = new \App\Models\PPEPP();
     }
 
     public function index()
     {
-        $dataPpepp = $this->model->findAll();
+        $dataPepp = $this->model->findAll();
 
-        return view('admin/ppepp/index', ['tb_ppepp' => $dataPpepp]);
+        return view('admin/ppepp/index', ['tb_ppepp' => $dataPepp]);
     }
 
 
@@ -38,7 +38,7 @@ class Ppepp extends ResourceController
 
         session()->setFlashdata('success', 'Data Berhasil ditambahkan');
 
-        return redirect()->to('/ppepp')->with('success', 'Ppepp created successfully');
+        return redirect()->to('/Ppepp')->with('success', 'Ppepp created successfully');
     }
 
 

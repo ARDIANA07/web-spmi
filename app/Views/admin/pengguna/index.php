@@ -19,16 +19,17 @@
     </div> -->
 </div>
 <a href="/pengguna/new" class="btn btn-outline-primary">Tambah Pengguna</a>
-<br>
-<?php if (session()->getFlashdata('success')) : ?>
-    <div class="alert alert-success">
-        <?php echo session()->getFlashdata('success'); ?>
-    </div>
-<?php endif; ?>
-
 
 <div class="content">
     <div class="row mt-4">
+        <?php if (session()->getFlashdata('success')) : ?>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <?php echo session()->getFlashdata('success'); ?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <?php endif; ?>
         <table class="table table-striped w-100" id="productTable">
             <thead>
                 <tr>
@@ -41,24 +42,26 @@
             <tbody>
                 <?php $i = 1; ?>
                 <?php foreach ($pengguna as $p) : ?>
-                    <tr>
-                        <td><?= $i++; ?></td>
-                        <td><?= $p['name']; ?></td>
-                        <td><?= $p['jabatan']; ?></td>
-                        <td>
-                            <div class="row">
-                                <div class="col-auto">
-                                    <a href="/pengguna/<?= $p['id_pengguna']; ?>/edit" class="btn btn-outline-warning mr-2">Edit</a>
-                                </div>
-                                <div class="col-auto px-0">
-                                    <form action="/pengguna/<?= $p['id_pengguna']; ?>" method="POST">
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <button type="submit" class="btn btn-outline-danger" onclick="confirm('Apakah kamu yakin akan menghapus data ini ?')">Delete</button>
-                                    </form>
-                                </div>
+                <tr>
+                    <td><?= $i++; ?></td>
+                    <td><?= $p['name']; ?></td>
+                    <td><?= $p['jabatan']; ?></td>
+                    <td>
+                        <div class="row">
+                            <div class="col-auto">
+                                <a href="/pengguna/<?= $p['id_pengguna']; ?>/edit"
+                                    class="btn btn-outline-warning mr-2">Edit</a>
                             </div>
-                        </td>
-                    </tr>
+                            <div class="col-auto px-0">
+                                <form action="/pengguna/<?= $p['id_pengguna']; ?>" method="POST">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="btn btn-outline-danger"
+                                        onclick="confirm('Apakah kamu yakin akan menghapus data ini ?')">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>

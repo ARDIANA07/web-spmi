@@ -15,20 +15,25 @@
 <a href="/tahun/new" class="btn btn-outline-primary">Tambah Tahun</a>
 <div class="content">
     <div class="row mt-4">
+        <?php if (session()->getFlashdata('success')) : ?>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <?php echo session()->getFlashdata('success'); ?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <?php endif; ?>
         <table class="table table-striped w-100" id="productTable">
             <thead>
                 <tr>
-                    <th>No.</th>
                     <th>Tahun</th>
                     <th>Status</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                <?php $i = 1; ?>
                 <?php foreach ($tahun as $th) : ?>
                 <tr>
-                    <td><?= $i++; ?></td>
                     <td><?= $th['tahun']; ?></td>
                     <td><?= $th['status']; ?></td>
                     <td>

@@ -18,17 +18,23 @@
     <div class="col-md-10 offset-md-1">
         <form action="/tahun" method="POST" enctype='multipart/form-data'>
             <?php csrf_field(); ?>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="name"><i class="bi bi-bag"></i></span>
-                <input type="number" name="tahun" class="form-control" placeholder="Tahun" aria-label="Nama Pengguna"
-                    aria-describedby="namaPengguna" required="true">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Tahun</label>
+                <select class="form-control" id="tahun" name="tahun">
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                </select>
             </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="jabatan"><i class="bi bi-cash"></i></span>
-                <input type="text" name="status" class="form-control" placeholder="Status" aria-label="Jabatan"
-                    aria-describedby="jabatan" required="true">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Status</label>
+                <select class="form-control" id="status" name="status">
+                    <option>Aktif</option>
+                    <option>No-aktif</option>
+                </select>
             </div>
-
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>

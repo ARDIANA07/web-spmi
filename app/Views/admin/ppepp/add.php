@@ -7,7 +7,7 @@
         <nav aria-label="breadcrumb" class="bg-light p-3">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item"><a href="/pengguna">PPEPP</a></li>
+                <li class="breadcrumb-item"><a href="/Ppepp">PPEPP</a></li>
                 <li class="breadcrumb-item active" aria-current="page">New PPEPP</li>
             </ol>
         </nav>
@@ -16,11 +16,11 @@
 
 <div class="row mt-4">
     <div class="col-md-10 offset-md-1">
-        <form action="/pengguna" method="POST" enctype='multipart/form-data'>
+        <form action="/Ppepp" method="POST" enctype='multipart/form-data'>
             <?php csrf_field(); ?>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">PPEPP</label>
-                <select class="form-control" id="ppepp" name="ppepp">
+                <select class="form-control" id="ppepp" name="jenis">
                     <option>Penetapan</option>
                     <option>Pelaksanaan</option>
                     <option>Evaluasi</option>
@@ -30,11 +30,11 @@
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Kriteria</label>
-                <input type="text" class="form-control" id="kriteria" placeholder="Kriteria">
+                <input type="text" class="form-control" id="kriteria" placeholder="Kriteria" name="kriteria">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Standar</label>
-                <input type="text" class="form-control" id="standar" placeholder="Standar">
+                <input type="text" class="form-control" id="standar" placeholder="Standar" name="standar">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

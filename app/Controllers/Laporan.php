@@ -6,14 +6,16 @@ use CodeIgniter\RESTful\ResourceController;
 
 class Laporan extends ResourceController
 {
-    /**
-     * Return an array of resource objects, themselves in array format
-     *
-     * @return mixed
-     */
+    public function __construct()
+    {
+        $this->model = new \App\Models\Laporan();
+    }
+
     public function index()
     {
-        //
+        $dataLaporan = $this->model->findAll();
+
+        return view('admin/laporan/index', ['laporan' => $dataLaporan]);
     }
 
     /**
