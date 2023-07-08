@@ -4,18 +4,16 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 
-class Ppepp extends ResourceController
+class Home extends ResourceController
 {
     public function __construct()
     {
-        $this->model = new \App\Models\PPEPP();
+        $this->model = new \App\Models\UserModel();
     }
 
     public function index()
     {
-        $dataPepp = $this->model->findAll();
-
-        return view('admin/ppepp/index', ['tb_ppepp' => $dataPepp]);
+        return view('user/index');
     }
 
 
@@ -44,19 +42,13 @@ class Ppepp extends ResourceController
 
     public function edit($id = null)
     {
-        $dataPengguna = $this->model->where('id', $id)->first();
-
-        return view('admin/ppepp/edit', ['tb_ppepp' => $dataPengguna]);
+        //
     }
 
 
     public function update($id = null)
     {
-        $dataPengguna = $this->request->getPost();
-        $this->model->where('id', $id)->set($dataPengguna)->update();
-
-        session()->setFlashdata('success', 'Data Berhasil di update');
-        return redirect()->to('/ppepp');
+        //
     }
 
 

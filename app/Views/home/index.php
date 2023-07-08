@@ -11,11 +11,6 @@
             </ol>
         </nav>
     </div>
-    <h2>Selamat Datang Di</h2>
-    <marquee behavior="scroll" direction="left" scrollamount="2">
-        <h5><b> APLIKASI PELAPORAN SISTEM PENJAMINAN MUTU INTERNAL</b></h5>
-    </marquee>
-
     <div class="content">
         <div class="flex-container">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias vel, amet similique culpa dignissimos,

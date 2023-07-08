@@ -8,7 +8,7 @@
         <nav aria-label="breadcrumb" class="bg-light p-3">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item"><a href="/ppepp">Laporan</a></li>
+                <li class="breadcrumb-item"><a href="/laporan">Laporan</a></li>
             </ol>
         </nav>
     </div>
@@ -37,12 +37,11 @@
                 <?php foreach ($laporan as $l) : ?>
                     <tr>
                         <td><?= $i++; ?></td>
-                        <td><?= $l['jenis']; ?></td>
                         <td><?= $l['laporan']; ?></td>
                         <td>
                             <div class="row">
                                 <div class="col-auto">
-                                    <a href="/tahun/<?= $l['id']; ?>/edit" class="btn btn-outline-warning mr-2">Edit</a>
+                                    <a href="/laporan<?= $l['id']; ?>/edit" class="btn btn-outline-warning mr-2">Edit</a>
                                 </div>
                             </div>
                         </td>
