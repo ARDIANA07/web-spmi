@@ -1,14 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+<?= $this->extend('layout/user'); ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<?= $this->section('content'); ?>
+<link rel="stylesheet" href="../css/style.css">
 
-<body>
-    <h4>Selamat datang di menu user</h4>
-</body>
+<div class="row mt-3">
+    <div class="col-12">
+        <nav aria-label="breadcrumb" class="bg-light p-3">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item active" aria-current="page">Home</li>
+                <li class="breadcrumb-item"><a href="/ppeppuser">PPEPP</a></li>
+            </ol>
+        </nav>
+    </div>
+    <div class="content">
+        <h2>Tampilan User</h2>
+        <div class="flex-container">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias vel, amet similique culpa dignissimos,
+                aliquid itaque fugiat sint iure quo placeat! Recusandae nisi neque voluptatibus non aspernatur. Fuga,
+                optio
+                aspernatur?</p>
+        </div>
+    </div>
+</div>
 
-</html>
+<?= $this->endSection(); ?>

@@ -45,9 +45,10 @@ $routes->resource('Ppepp');
 $routes->resource('laporan');
 
 //methode user
-$routes->get('/user/home', 'Home::index');
-$routes->resource('user/home');
-
+$routes->get('/userhome', 'UserHome::index');
+$routes->get('/ppeppuser', 'PpeppUser::index');
+$routes->resource('userhome');
+$routes->resource('ppeppuser');
 
 
 /*

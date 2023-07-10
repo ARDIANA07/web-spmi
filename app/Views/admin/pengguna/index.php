@@ -23,12 +23,12 @@
 <div class="content">
     <div class="row mt-4">
         <?php if (session()->getFlashdata('success')) : ?>
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <?php echo session()->getFlashdata('success'); ?>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <?php echo session()->getFlashdata('success'); ?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
         <?php endif; ?>
         <table class="table table-striped w-100" id="productTable">
             <thead>
@@ -42,24 +42,26 @@
             <tbody>
                 <?php $i = 1; ?>
                 <?php foreach ($pengguna as $p) : ?>
-                    <tr>
-                        <td><?= $i++; ?></td>
-                        <td><?= $p['name']; ?></td>
-                        <td><?= $p['jabatan']; ?></td>
-                        <td>
-                            <div class="row">
-                                <div class="col-auto">
-                                    <a href="/pengguna/<?= $p['id_pengguna']; ?>/edit" class="btn btn-outline-warning mr-2" class="modal" href="#" data-toggle="modal" data-target="#editModal">Edit</a>
-                                </div>
-                                <div class="col-auto px-0">
-                                    <form action="/pengguna/<?= $p['id_pengguna']; ?>" method="POST">
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <button type="submit" class="btn btn-outline-danger" onclick="confirm('Apakah kamu yakin akan menghapus data ini ?')">Delete</button>
-                                    </form>
-                                </div>
+                <tr>
+                    <td><?= $i++; ?></td>
+                    <td><?= $p['name']; ?></td>
+                    <td><?= $p['jabatan']; ?></td>
+                    <td>
+                        <div class="row">
+                            <div class="col-auto">
+                                <a href="/pengguna/<?= $p['id_pengguna']; ?>/edit" class="btn btn-outline-warning mr-2"
+                                    class="modal" href="#" data-toggle="modal" data-target="#editModal">Edit</a>
                             </div>
-                        </td>
-                    </tr>
+                            <div class="col-auto px-0">
+                                <form action="/pengguna/<?= $p['id_pengguna']; ?>" method="POST">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="btn btn-outline-danger"
+                                        onclick="confirm('Apakah kamu yakin akan menghapus data ini ?')">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
@@ -67,7 +69,8 @@
 </div>
 
 <!-- Edit Modal-->
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="row mt-4">
@@ -77,11 +80,13 @@
                         <h2 align="center">Form Edit Pengguna</h2>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="name"><i class="bi bi-bag"></i></span>
-                            <input type="text" name="name" class="form-control" placeholder="Nama Pengguna" aria-label="Nama Pengguna" aria-describedby="namaPengguna" required="true">
+                            <input type="text" name="name" class="form-control" placeholder="Nama Pengguna"
+                                aria-label="Nama Pengguna" aria-describedby="namaPengguna" required="true">
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="jabatan"><i class="bi bi-cash"></i></span>
-                            <input type="text" name="jabatan" class="form-control" placeholder="Jabatan" aria-label="Jabatan" aria-describedby="jabatan" required="true">
+                            <input type="text" name="jabatan" class="form-control" placeholder="Jabatan"
+                                aria-label="Jabatan" aria-describedby="jabatan" required="true">
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>
