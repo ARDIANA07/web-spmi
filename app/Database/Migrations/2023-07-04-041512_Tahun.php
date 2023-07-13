@@ -20,10 +20,10 @@ class Tahun extends Migration
                 'constraint' => ['2020', '2021', '2022', '2023', '2024'],
                 'default' => '2023',
             ],
-            'status' => [
-                'type' => 'ENUM',
-                'constraint' => ['Aktif', 'Non-Aktif'],
-                'default' => 'Aktif',
+            'id_status' => [
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned' => true,
             ],
             'created_at' => [
                 'type' => 'DATETIME',

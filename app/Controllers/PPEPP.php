@@ -8,7 +8,7 @@ class Ppepp extends ResourceController
 {
     public function __construct()
     {
-        $this->model = new \App\Models\PPEPP();
+        $this->model = new \App\Models\PpeppModel();
     }
 
     public function index()

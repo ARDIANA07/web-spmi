@@ -12,14 +12,19 @@
             </ol>
         </nav>
     </div>
-    <div class="content">
-        <h2>Tampilan User</h2>
-        <div class="flex-container">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias vel, amet similique culpa dignissimos,
-                aliquid itaque fugiat sint iure quo placeat! Recusandae nisi neque voluptatibus non aspernatur. Fuga,
-                optio
-                aspernatur?</p>
+    <div class="container-fluid">
+        <h2 align="left">Tampilan User</h2>
+        <div class="content">
+            <div class="flex-container">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias vel, amet similique culpa
+                    dignissimos,
+                    aliquid itaque fugiat sint iure quo placeat! Recusandae nisi neque voluptatibus non aspernatur.
+                    Fuga,
+                    optio
+                    aspernatur?</p>
+            </div>
         </div>
+
     </div>
 </div>
 

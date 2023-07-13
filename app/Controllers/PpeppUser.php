@@ -2,48 +2,49 @@
 
 namespace App\Controllers;
 
+use App\Models\PpeppUser as ModelsPpeppUser;
 use CodeIgniter\RESTful\ResourceController;
+use App\Models\PpeppModel;
+use App\Models\PpeppUserModel;
+
 
 class PpeppUser extends ResourceController
 {
-    /**
-     * Return an array of resource objects, themselves in array format
-     *
-     * @return mixed
-     */
-    public function index()
+    protected $helpers = ['custome'];
+
+    public function __construct()
     {
-        //
+        // $this->Ppepp = new PpeppModel();
+        // $this->Ppeppuser = new PpeppUser();
     }
 
-    /**
-     * Return the properties of a resource object
-     *
-     * @return mixed
-     */
+    public function index()
+    {
+        $dataPpeppUser = $this->model->findAll();
+
+        return view('user/ppepp_user', ['tb_ppepp_user' => $dataPpeppUser]);
+    }
+
+
     public function show($id = null)
     {
         //
     }
 
-    /**
-     * Return a new resource object, with default properties
-     *
-     * @return mixed
-     */
+
     public function new()
     {
         //
     }
 
-    /**
-     * Create a new resource object, from "posted" parameters
-     *
-     * @return mixed
-     */
+
     public function create()
     {
-        //
+
+        $users = $this->model->importDataFromProfile();
+
+        // Mengirim data pengguna dengan data dari tabel tb_ppepp ke halaman create tb_ppepp_user
+        return view('user/ppepp_user', ['tb_ppepp_user' => $users]);
     }
 
     /**

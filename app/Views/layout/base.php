@@ -118,17 +118,23 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <marquee behavior="scroll" direction="left" scrollamount="2">
+                        <h5><b> SELAMAT DATANG DI APLIKASI PELAPORAN SISTEM PENJAMINAN MUTU INTERNAL</b></h5>
+                    </marquee>
+
+                    <!-- Topbar Search
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form> -->
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -166,10 +172,6 @@
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
                         </li>
 
                     </ul>
@@ -179,13 +181,8 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <div class="content">
-                        <marquee behavior="scroll" direction="left" scrollamount="2">
-                            <h5><b> SELAMAT DATANG DI APLIKASI PELAPORAN SISTEM PENJAMINAN MUTU INTERNAL</b></h5>
-                        </marquee>
-                        <!-- Page Heading -->
-                        <?= $this->renderSection('content'); ?>
-                    </div>
+                    <!-- Page Heading -->
+                    <?= $this->renderSection('content'); ?>
                 </div>
                 <!-- /.container-fluid -->
 
