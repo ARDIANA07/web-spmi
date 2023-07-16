@@ -32,11 +32,14 @@ $routes->set404Override();
 
 //method admin
 $routes->get('/', 'Pengguna::index');
+$routes->get('/admin', 'Pengguna::index');
 $routes->get('/home', 'Home::index');
 $routes->get('/tahun', 'Tahun::index');
 $routes->get('/profile', 'Profile::index');
 $routes->get('/Ppepp', 'PPEPP::index');
 $routes->get('/laporan', 'Laporan::index');
+$routes->get('/auth', 'Auth::index');
+$routes->get('/auth/login', 'Auth::loginProsess');
 
 $routes->resource('pengguna');
 $routes->resource('tahun');

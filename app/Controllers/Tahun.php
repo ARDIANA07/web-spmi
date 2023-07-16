@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 use CodeIgniter\Session\Session;
+use App\Models\StatusModel;
 
 
 class Tahun extends ResourceController
@@ -11,13 +12,16 @@ class Tahun extends ResourceController
     public function __construct()
     {
         $this->model = new \App\Models\Tahun();
+        $this->model = new \App\Models\StatusModel();
     }
 
     public function index()
     {
-        $dataTahun = $this->model->findAll();
+        $dataTahun = new \App\Models\Tahun();
+        $results = $dataTahun->joinTabelStatus();
+        $data['results'] = $results;
 
-        return view('admin/tahun/index', ['tahun' => $dataTahun]);
+        return view('admin/tahun/index', $data);
     }
 
 
