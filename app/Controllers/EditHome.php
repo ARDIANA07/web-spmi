@@ -4,21 +4,16 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 
-class Akses extends ResourceController
+class EditHome extends ResourceController
 {
-    public function __construct()
-    {
-        $this->model = new \App\Models\HakAkses();
-        $this->model = new \App\Models\Pengguna();
-        $this->model = new \App\Models\AksesModel();
-    }
+    /**
+     * Return an array of resource objects, themselves in array format
+     *
+     * @return mixed
+     */
     public function index()
     {
-        $dataAkses = new \App\Models\HakAkses();
-        $results = $dataAkses->joinTabel();
-        $data['results'] = $results;
-
-        return view('admin/akses/index', $data);
+        return view('editor/index');
     }
 
     /**
@@ -28,20 +23,7 @@ class Akses extends ResourceController
      */
     public function show($id = null)
     {
-        $dataAkses = new \App\Models\HakAkses();
-        $data['result'] = $dataAkses->find($id);
-
-        if ($data['result']) {
-            if ($id == 1) {
-                return view('user/index', $data);
-            } elseif ($id == 2) {
-                return view('editor/index', $data);
-            } elseif ($id == 3) {
-                return view('verifikator/index', $data);
-            }
-        } else {
-            return redirect('/akses');
-        }
+        //
     }
 
     /**

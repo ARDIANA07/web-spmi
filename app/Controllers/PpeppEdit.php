@@ -4,21 +4,21 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 
-class Akses extends ResourceController
+class PpeppEdit extends ResourceController
 {
     public function __construct()
     {
-        $this->model = new \App\Models\HakAkses();
-        $this->model = new \App\Models\Pengguna();
-        $this->model = new \App\Models\AksesModel();
+        $this->model = new \App\Models\PpeppEditModel();
+        $this->model = new \App\Models\PpeppUserModel();
     }
+
     public function index()
     {
-        $dataAkses = new \App\Models\HakAkses();
-        $results = $dataAkses->joinTabel();
+        $dataPpeppEdit = new \App\Models\PpeppEditModel();
+        $results = $dataPpeppEdit->joinTabelPpeppEdit();
         $data['results'] = $results;
 
-        return view('admin/akses/index', $data);
+        return view('editor/ppepp_edit', $data);
     }
 
     /**
@@ -28,20 +28,7 @@ class Akses extends ResourceController
      */
     public function show($id = null)
     {
-        $dataAkses = new \App\Models\HakAkses();
-        $data['result'] = $dataAkses->find($id);
-
-        if ($data['result']) {
-            if ($id == 1) {
-                return view('user/index', $data);
-            } elseif ($id == 2) {
-                return view('editor/index', $data);
-            } elseif ($id == 3) {
-                return view('verifikator/index', $data);
-            }
-        } else {
-            return redirect('/akses');
-        }
+        //
     }
 
     /**

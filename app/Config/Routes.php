@@ -40,18 +40,26 @@ $routes->get('/Ppepp', 'PPEPP::index');
 $routes->get('/laporan', 'Laporan::index');
 $routes->get('/auth', 'Auth::index');
 $routes->get('/auth/login', 'Auth::loginProsess');
+$routes->get('/akses', 'Akses::index');
 
 $routes->resource('pengguna');
 $routes->resource('tahun');
 $routes->resource('profile');
 $routes->resource('Ppepp');
 $routes->resource('laporan');
+$routes->resource('akses');
 
 //methode user
 $routes->get('/userhome', 'UserHome::index');
 $routes->get('/ppeppuser', 'PpeppUser::index');
 $routes->resource('userhome');
 $routes->resource('ppeppuser');
+
+//method editor
+$routes->get('/edithome', 'EditHome::index');
+$routes->get('/ppeppedit', 'PpeppEdit::index');
+$routes->resource('edithome');
+$routes->resource('ppeppedit');
 
 
 /*

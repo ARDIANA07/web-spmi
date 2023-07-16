@@ -6,8 +6,8 @@ use CodeIgniter\Model;
 
 class Profile extends Model
 {
-    protected $table           = 'profile';
-    protected $primaryKey      = 'id';
+    protected $table           = 'tb_profile';
+    protected $primaryKey      = 'id_profile';
     protected $useSoftDeletes  = true;
     protected $allowedFields   = ['prodi', 'visi', 'misi', 'tujuan'];
     protected $useTimestamps   = true;

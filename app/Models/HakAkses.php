@@ -6,37 +6,23 @@ use CodeIgniter\Model;
 
 class HakAkses extends Model
 {
-    protected $DBGroup          = 'default';
-    protected $table            = 'hakakses';
-    protected $primaryKey       = 'id';
-    protected $useAutoIncrement = true;
-    protected $insertID         = 0;
-    protected $returnType       = 'array';
-    protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $table           = 'tb_hak_akses';
+    protected $primaryKey      = 'id_hak_akses';
+    protected $returnType       = 'object';
+    protected $useSoftDeletes  = false;
+    protected $allowedFields   = ['pengguna_id', 'akses_id'];
+    protected $useTimestamps   = true;
 
-    // Dates
-    protected $useTimestamps = false;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    public function joinTabel()
+    {
+        $tabel2 = 'tb_pengguna';
+        $tabel3 = 'tb_akses';
 
-    // Validation
-    protected $validationRules      = [];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
-
-    // Callbacks
-    protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
-    protected $afterInsert    = [];
-    protected $beforeUpdate   = [];
-    protected $afterUpdate    = [];
-    protected $beforeFind     = [];
-    protected $afterFind      = [];
-    protected $beforeDelete   = [];
-    protected $afterDelete    = [];
+        $builder = $this->db->table($this->table);
+        $builder->select('*');
+        $builder->join($tabel2, 'tb_hak_akses.pengguna_id =tb_pengguna.id_pengguna');
+        $builder->join($tabel3, 'tb_hak_akses.akses_id =tb_akses.id_akses');
+        $results = $builder->get()->getResult();
+        return $results;
+    }
 }

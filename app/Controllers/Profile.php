@@ -16,7 +16,7 @@ class Profile extends ResourceController
     {
         $dataProfile = $this->model->findAll();
 
-        return view('admin/profile/index', ['profile' => $dataProfile]);
+        return view('admin/profile/index', ['tb_profile' => $dataProfile]);
     }
 
     public function show($id = null)

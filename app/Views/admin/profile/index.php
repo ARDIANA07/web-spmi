@@ -25,7 +25,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($profile as $pp) : ?>
+                <?php foreach ($tb_profile as $pp) : ?>
                 <tr>
                     <td><?= $pp['prodi']; ?></td>
                     <td><?= $pp['visi']; ?></td>
@@ -34,7 +34,8 @@
                     <td>
                         <div class="row">
                             <div class="col-auto">
-                                <a href="/tahun/<?= $pp['id']; ?>/edit" class="btn btn-outline-warning mr-2">Edit</a>
+                                <a href="/tahun/<?= $pp['id_profile']; ?>/edit"
+                                    class="btn btn-outline-warning mr-2">Edit</a>
                             </div>
                         </div>
                     </td>
