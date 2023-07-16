@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Status</label>
-                <select class="form-control" id="status" name="status">
+                <select class="form-control" id="id_status" name="id_status">
                     <option>Aktif</option>
                     <option>No-aktif</option>
                 </select>

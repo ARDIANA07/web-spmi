@@ -62,6 +62,9 @@ class Ppepp extends ResourceController
 
     public function delete($id = null)
     {
-        //
+        $this->model->delete($id);
+
+        session()->setFlashdata('success', 'Data Berhasil dihapus');
+        return redirect()->to('/Ppepp');
     }
 }

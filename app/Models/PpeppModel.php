@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class PpeppModel extends Model
 {
     protected $table           = 'tb_ppepp';
-    protected $primaryKey      = 'id';
+    protected $primaryKey      = 'id_ppepp';
     protected $useSoftDeletes  = true;
     protected $allowedFields   = ['jenis', 'kriteria', 'standar'];
     protected $useTimestamps   = true;
