@@ -15,9 +15,14 @@ class PpeppEditModel extends Model
 
     public function joinTabelPpeppEdit()
     {
+
+        $tabel2 = 'tb_ppepp';
+        $tabel3 = 'tb_ppepp_user';
+
         $builder = $this->db->table($this->table);
         $builder->select('*');
-        $builder->join('tb_ppepp_user', 'tb_ppepp_user.id_ppepp_user =tb_ppepp_editor.ppepp_user_id');
+        $builder->join($tabel2, 'tb_ppepp_editor.ppepp_id =tb_ppepp.id_ppepp');
+        $builder->join($tabel3, 'tb_ppepp_editor.ppepp_user_id =tb_ppepp_user.id_ppepp_user');
         $results = $builder->get()->getResult();
         return $results;
     }

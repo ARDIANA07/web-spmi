@@ -5,7 +5,7 @@
     <div class="col-md-12">
         <nav aria-label="breadcrumb" class="bg-light p-3">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/home">Home</a></li>
                 <li class="breadcrumb-item"><a href="/profile">Profile</a></li>
             </ol>
         </nav>
@@ -26,20 +26,19 @@
             </thead>
             <tbody>
                 <?php foreach ($tb_profile as $pp) : ?>
-                <tr>
-                    <td><?= $pp['prodi']; ?></td>
-                    <td><?= $pp['visi']; ?></td>
-                    <td><?= $pp['misi']; ?></td>
-                    <td><?= $pp['tujuan']; ?></td>
-                    <td>
-                        <div class="row">
-                            <div class="col-auto">
-                                <a href="/tahun/<?= $pp['id_profile']; ?>/edit"
-                                    class="btn btn-outline-warning mr-2">Edit</a>
+                    <tr>
+                        <td><?= $pp['prodi']; ?></td>
+                        <td><?= $pp['visi']; ?></td>
+                        <td><?= $pp['misi']; ?></td>
+                        <td><?= $pp['tujuan']; ?></td>
+                        <td>
+                            <div class="row">
+                                <div class="col-auto">
+                                    <a href="/tahun/<?= $pp['id_profile']; ?>/edit" class="btn btn-outline-warning mr-2">Edit</a>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                </tr>
+                        </td>
+                    </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>

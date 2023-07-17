@@ -7,13 +7,13 @@
     <div class="col-md-12">
         <nav aria-label="breadcrumb" class="bg-light p-3">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item"><a href="/ppeppeditor">PPEPP</a></li>
+                <li class="breadcrumb-item"><a href="/edithome">Home</a></li>
+                <li class="breadcrumb-item"><a href="/ppeppedit">PPEPP</a></li>
             </ol>
         </nav>
     </div>
 </div>
-<a href="/ppeppeditor/new" class="btn btn-outline-primary">Tambah PPEPP</a>
+<a href="/ppeppedit/new" class="btn btn-outline-primary">Tambah PPEPP</a>
 <div class="content">
     <div class="row mt-4">
         <?php if (session()->getFlashdata('success')) : ?>
@@ -50,12 +50,12 @@
                     <td>
                         <div class="row">
                             <div class="col-auto">
-                                <a href="/ppeppedit/<?= $row->id_ppepp_edit; ?>/edit"
+                                <a href="/ppeppedit/<?= $row->id_ppepp_editor; ?>/edit"
                                     class="btn btn-outline-warning mr-2" class="modal" href="#" data-toggle="modal"
                                     data-target="#editModal">Edit</a>
                             </div>
                             <div class="col-auto px-0">
-                                <form action="/ppeppedit/<?= $pp['id_ppepp'];  ?>" method="POST">
+                                <form action="/ppeppedit/<?= $row->id_ppepp_editor;  ?>" method="POST">
                                     <input type="hidden" name="_method" value="DELETE">
                                     <button type="submit" class="btn btn-outline-danger"
                                         onclick="confirm('Apakah kamu yakin akan menghapus data ini ?')">Delete</button>

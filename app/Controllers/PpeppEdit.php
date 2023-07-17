@@ -18,7 +18,7 @@ class PpeppEdit extends ResourceController
         $results = $dataPpeppEdit->joinTabelPpeppEdit();
         $data['results'] = $results;
 
-        return view('editor/ppepp_edit', $data);
+        return view('editor/ppeppeditor', $data);
     }
 
     /**
@@ -58,24 +58,25 @@ class PpeppEdit extends ResourceController
      */
     public function edit($id = null)
     {
-        //
+        $dataPpeppEdit = new \App\Models\PpeppEditModel();
+        $results = $dataPpeppEdit->joinTabelPpeppEdit();
+        $data['results'] = $results;
+
+        $dataPengguna = $this->model->where('id', $id)->first();
+
+        return view('editor/ppeppedit/edit', ['tb_ppeppeditor' => $dataPengguna, 'results' => $data]);
     }
 
-    /**
-     * Add or update a model resource, from "posted" properties
-     *
-     * @return mixed
-     */
+
     public function update($id = null)
     {
-        //
+        $dataPengguna = $this->request->getPost();
+        $this->model->where('id', $id)->set($dataPengguna)->update();
+
+        session()->setFlashdata('success', 'Data Berhasil di update');
+        return redirect()->to('/ppeppeditor');
     }
 
-    /**
-     * Delete the designated resource object from the model
-     *
-     * @return mixed
-     */
     public function delete($id = null)
     {
         //
