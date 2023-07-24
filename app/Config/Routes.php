@@ -61,6 +61,13 @@ $routes->get('/ppeppedit', 'PpeppEdit::index');
 $routes->resource('edithome');
 $routes->resource('ppeppedit');
 
+//method verifikator
+$routes->get('/verifhome', 'VerifHome::index');
+$routes->get('/ppeppverifikator', 'PpeppVerifikator::index');
+$routes->resource('verifhome');
+$routes->resource('ppeppverifikator');
+
+
 
 /*
  * --------------------------------------------------------------------
