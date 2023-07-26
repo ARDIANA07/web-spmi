@@ -9,6 +9,6 @@ class User extends Model
     protected $table           = 'user';
     protected $primaryKey      = 'id_user';
     protected $useSoftDeletes  = true;
-    protected $allowedFields   = ['name', 'username', 'password'];
+    protected $allowedFields   = ['name', 'email', 'password'];
     protected $useTimestamps   = true;
 }

@@ -9,7 +9,10 @@ class UserHome extends ResourceController
 
     public function index()
     {
-        return view('user/index');
+        $dataPpeppUser = new \App\Models\PpeppUserModel();
+        $results = $dataPpeppUser->joinTabelPpepp();
+        $data['results'] = $results;
+        return view('user/index', $data);
     }
 
     /**

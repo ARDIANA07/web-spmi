@@ -25,18 +25,19 @@
             <tbody>
                 <?php $i = 1; ?>
                 <?php foreach ($results as $row) : ?>
-                    <tr>
-                        <td><?= $i++ ?></td>
-                        <td><?= $row->jabatan; ?></td>
-                        <td><?= $row->akses; ?></td>
-                        <td>
-                            <div class="row">
-                                <div class="col-auto">
-                                    <a href="/akses/<?= $row->id_hak_akses; ?>/show" class="btn btn-outline-success mr-2">Detail</a>
-                                </div>
+                <tr>
+                    <td><?= $i++ ?></td>
+                    <td><?= $row->jabatan; ?></td>
+                    <td><?= $row->akses; ?></td>
+                    <td>
+                        <div class="row">
+                            <div class="col-auto">
+                                <a href="akses/<?= $row->id_hak_akses; ?>"
+                                    class="btn btn-outline-success mr-2">Detail</a>
                             </div>
-                        </td>
-                    </tr>
+                        </div>
+                    </td>
+                </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>

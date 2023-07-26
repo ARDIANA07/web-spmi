@@ -29,6 +29,7 @@ class Akses extends ResourceController
     public function show($id = null)
     {
         $dataAkses = new \App\Models\HakAkses();
+        $dataAkses = new \App\Models\AksesModel();
         $data['result'] = $dataAkses->find($id);
 
         if ($data['result']) {

@@ -67,6 +67,12 @@ $routes->get('/ppeppverifikator', 'PpeppVerifikator::index');
 $routes->resource('verifhome');
 $routes->resource('ppeppverifikator');
 
+//method auth
+
+$routes->get('/register', 'Register::index');
+$routes->get('/login', 'Login::index');
+$routes->post('/login', 'Login::proses_login');
+
 
 
 /*

@@ -1,0 +1,21 @@
+ERROR - 2023-07-26 00:00:21 --> mysqli_sql_exception: Unknown table 'db_spmi.users' in C:\xampp\htdocs\web_spmi\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\web_spmi\system\Database\MySQLi\Connection.php(295): mysqli->query('DROP TABLE `use...', 0)
+#1 C:\xampp\htdocs\web_spmi\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('DROP TABLE `use...')
+#2 C:\xampp\htdocs\web_spmi\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('DROP TABLE `use...')
+#3 C:\xampp\htdocs\web_spmi\system\Database\Forge.php(637): CodeIgniter\Database\BaseConnection->query('DROP TABLE `use...')
+#4 C:\xampp\htdocs\web_spmi\app\Database\Migrations\2023-07-25-235556_Users.php(45): CodeIgniter\Database\Forge->dropTable('users')
+#5 C:\xampp\htdocs\web_spmi\system\Database\MigrationRunner.php(877): App\Database\Migrations\Users->down()
+#6 C:\xampp\htdocs\web_spmi\system\Database\MigrationRunner.php(299): CodeIgniter\Database\MigrationRunner->migrate('down', Object(stdClass))
+#7 C:\xampp\htdocs\web_spmi\system\Commands\Database\MigrateRollback.php(92): CodeIgniter\Database\MigrationRunner->regress(9)
+#8 C:\xampp\htdocs\web_spmi\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\MigrateRollback->run(Array)
+#9 C:\xampp\htdocs\web_spmi\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate:rollbac...', Array)
+#10 C:\xampp\htdocs\web_spmi\spark(97): CodeIgniter\CLI\Console->run()
+#11 {main}
+INFO - 2023-07-26 00:46:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-26 00:47:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-26 14:30:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-26 16:14:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-26 16:23:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-26 16:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-26 16:27:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
