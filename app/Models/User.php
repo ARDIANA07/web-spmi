@@ -11,4 +11,16 @@ class User extends Model
     protected $useSoftDeletes  = true;
     protected $allowedFields   = ['name', 'email', 'password'];
     protected $useTimestamps   = true;
+
+    //menambahkan fungsi untuk memeriksa login
+    public function getByEmail($email)
+    {
+        return $this->where('email', $email)->first();
+    }
+
+    //menambahkan fungsi untuk menyimpan data user baru
+    public function saveUser($data)
+    {
+        return $this->insert($data);
+    }
 }

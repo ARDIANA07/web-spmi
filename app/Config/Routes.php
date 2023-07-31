@@ -11,7 +11,7 @@ $routes = Services::routes();
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('Login');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -31,7 +31,8 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 
 //method admin
-$routes->get('/', 'Pengguna::index');
+$routes->get('/pengguna', 'Pengguna::index');
+$routes->get('/', 'Auth::index');
 $routes->get('/admin', 'Pengguna::index');
 $routes->get('/home', 'Home::index');
 $routes->get('/tahun', 'Tahun::index');
@@ -70,8 +71,12 @@ $routes->resource('ppeppverifikator');
 //method auth
 
 $routes->get('/register', 'Register::index');
-$routes->get('/login', 'Login::index');
-$routes->post('/login', 'Login::proses_login');
+$routes->post('admin/login/process_login', 'Login::process_login');
+$routes->get('/admin/login', 'Login_Admin::index');
+$routes->get('/user/login', 'Login_User::index');
+$routes->get('/editor/login', 'Login_Editor::index');
+$routes->get('/verif/login', 'Login_Verif::index');
+$routes->post('/register/create', 'Register::save');
 
 
 

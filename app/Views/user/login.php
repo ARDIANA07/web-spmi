@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Register</title>
+    <title>Login</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
 <body>
@@ -21,28 +22,33 @@
 
                                     <div class="text-center">
                                         <img src="../img/Hotpot.PNG" style="width: 250px;" alt="logo">
-                                        <h3>Register Account</h3><br>
-                                    </div>
-                                    <form action="<?= base_url('register/create') ?>" method="post">
-                                        <div class="form-outline mb-4">
-                                            <label class="form-label" for="form2Example11">Name</label>
-                                            <input type="text" id="form2Example11" class="form-control" name="name" placeholder="Nama Lengkap" />
+                                        <h3>Login User Account</h3><br>
+                                        <?php if (session()->getFlashdata('success')) : ?>
+                                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                            <?php echo session()->getFlashdata('success'); ?>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
+                                        <?php endif; ?>
+                                    </div>
+                                    <form action="<?= base_url('login/process'); ?>" method="post">
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example11">Email</label>
-                                            <input type="email" id="form2Example11" class="form-control" name="email" placeholder="Phone number or email address" />
+                                            <input type="email" id="form2Example11" class="form-control" name="email"
+                                                placeholder="Phone number or email address" />
                                         </div>
-
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example22">Password</label>
-                                            <input type="password" id="form2Example22" class="form-control" name="password" placeholder="Password" />
+                                            <input type="password" id="form2Example22" class="form-control"
+                                                name="password" placeholder="Password" />
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary">Login</button>
                                         <div class="d-flex align-items-center justify-content-center pb-4">
-                                            <p class="mb-0 me-2">Your have an account?</p>
-                                            <a href="<?= base_url('/') ?>" class="btn btn-outline-danger">Login</a>
+                                            <p class="mb-0 me-2">Don't have an account?</p>
+                                            <a href="<?= base_url('register') ?>" class="btn btn-outline-danger">Create
+                                                new</a>
                                         </div>
-
                                     </form>
                                 </div>
                             </div>
@@ -63,7 +69,8 @@
         </div>
     </section>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
 </script>
 
 </html>
