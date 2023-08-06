@@ -13,37 +13,33 @@ class Login_Admin extends BaseController
         return view('admin/login', $data);
     }
 
-    public function process_login()
+    public function login_action()
     {
-        $session = session();
+        $email = $this->request->getVar('email');
+        $password = $this->request->getVar('password');
 
-        $email = $this->request->getPost('email');
-        $password = $this->request->getPost('password');
-
-        $model = new User();
-        $user = $model->getUserByEmail($email);
-
-        if ($user) {
-            $hashedPassword = $user['password'];
-            $password = $user['password'];
-
-            if (password_verify($password, $hashedPassword)) {
-                $session->set('isLoggedIn', true);
-                $session->set('email', $user['email']);
-                return redirect()->to('/home'); // Ganti '/dashboard' dengan halaman setelah login berhasil
+        $user = new User();
+        $data = $user->asObject()->where('email', $email)->first();
+        if ($data) {
+            $session = session();
+            if (password_verify($password, $data->password)) {
+                //create session
+                $login = [
+                    'name' => $data['name'],
+                    'email' => $data['email'],
+                ];
+                $session->set($login);
+                return redirect()->to('/home');
             } else {
-                return redirect()->back()->with('error', 'Kata sandi salah.');
+                $session->setFlashdata('msg', 'Email/Password invalid');
+                return redirect()->to('admin/login');
             }
-        } else {
-            return redirect()->back()->with('error', 'Email tidak ditemukan.');
         }
     }
 
     public function logout()
     {
-        $session = session();
-        $session->remove('isLoggedIn');
-        $session->remove('email');
-        return redirect()->to('/login'); // Ganti '/login' dengan halaman login Anda
+        session()->destroy();
+        return redirect()->to(base_url('login'));
     }
 }

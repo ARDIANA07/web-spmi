@@ -19,10 +19,12 @@
                         <div class="row g-0">
                             <div class="col-lg-6">
                                 <div class="card-body p-md-5 mx-md-4">
-
                                     <div class="text-center">
                                         <img src="../img/Hotpot.PNG" style="width: 250px;" alt="logo">
                                         <h3>Login Admin Account</h3><br>
+                                        <?php if(session()->getFlashdata('msg')):?>
+                                        <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
+                                        <?php endif;?>
                                         <?php if (session()->getFlashdata('success')) : ?>
                                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
                                             <?php echo session()->getFlashdata('success'); ?>
@@ -32,7 +34,7 @@
                                         </div>
                                         <?php endif; ?>
                                     </div>
-                                    <form action="<?= base_url('admin/login/process_login'); ?>" method="post">
+                                    <form action="<?= base_url('login_admin/login_action'); ?>" method="post">
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example11">Email</label>
                                             <input type="email" id="form2Example11" class="form-control" name="email"

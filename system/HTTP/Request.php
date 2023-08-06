@@ -77,7 +77,7 @@ class Request extends OutgoingRequest implements RequestInterface
      *
      * @codeCoverageIgnore
      */
-    public function getMethod(bool $upper = false): string
+    public function getMethod(bool $upper = true): string
     {
         return ($upper) ? strtoupper($this->method) : strtolower($this->method);
     }

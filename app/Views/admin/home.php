@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="../css/style.css">
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.2/chart.min.js" integrity="sha512-csUso5vWY3PpIJkxLWFbPI7KkjXFhKXpUaAUp1ZLyNhxVWdQacEPH9e7Iw6Rco4es1uQNnlxdCCFkSnJ/f1ZzA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <div class="row mt-3">
     <div class="col-12">
@@ -25,26 +26,25 @@
                     aspernatur?</p>
             </div>
         </div>
+        <h1>Dashboard</h1>
+
         <div>
-            <canvas id="salesChart" width="400" height="200"></canvas>
+            <canvas id="grafikPenjualan" width="100" height="50"></canvas>
         </div>
 
         <script>
-            // The PHP variable $salesData should contain the sales data fetched from the controller
-            var salesData = <?php echo json_encode($results); ?>;
+            // Ambil data dari PHP untuk dijadikan data grafik
+            var dataGrafik = <?= json_encode($dataGrafik) ?>;
 
-            // Extract the labels and sales amount from the fetched data
-            var labels = salesData.map(entry => entry.product_name);
-            var amounts = salesData.map(entry => entry.sales_amount);
-
-            var ctx = document.getElementById('salesChart').getContext('2d');
+            // Buat grafik menggunakan Chart.js
+            var ctx = document.getElementById('grafikPenjualan').getContext('2d');
             var myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: labels,
+                    labels: dataGrafik.labels,
                     datasets: [{
-                        label: 'Sales Amount',
-                        data: amounts,
+                        label: 'Penjualan',
+                        data: dataGrafik.data,
                         backgroundColor: 'rgba(75, 192, 192, 0.2)',
                         borderColor: 'rgba(75, 192, 192, 1)',
                         borderWidth: 1

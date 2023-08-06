@@ -71,7 +71,7 @@ $routes->resource('ppeppverifikator');
 //method auth
 
 $routes->get('/register', 'Register::index');
-$routes->post('admin/login/process_login', 'Login::process_login');
+$routes->post('login_admin/login_action', 'Login_Admin::login_action');
 $routes->get('/admin/login', 'Login_Admin::index');
 $routes->get('/user/login', 'Login_User::index');
 $routes->get('/editor/login', 'Login_Editor::index');

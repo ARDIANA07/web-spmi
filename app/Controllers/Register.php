@@ -24,7 +24,7 @@ class Register extends BaseController
             'email' => $this->request->getVar('email'),
             'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
         ];
-        $model->saveUser($data);
+        $model->save($data);
 
         session()->setFlashdata('success', 'Registrasi Berhasil');
         return redirect()->to('/admin/login');
